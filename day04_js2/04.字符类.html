@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 字符类：[] 表示有一系列字符可以选择，只要可以匹配其中一个就可以了
+        var rg = /[abc]/ // 只要包含有其中之一 都返回true
+        console.log(rg.test('andy')); // true 
+        console.log(rg.test('baby')); // true
+        console.log(rg.test('color')); // true
+        console.log(rg.test('red')); // false
+        var reg = /^[123]$/ // 三选一 只有是1或2或3这三个字母才返回 true
+        console.log(reg.test('1das2')); // false
+        console.log(reg.test('123')); // false
+        console.log(reg.test('1')); // true
+        console.log('-----------------');
+        
+        var reg1 = /^[a-z]$/ // 26个英文字母任何一个字母都返回 true
+        console.log(reg1.test('c')); // true
+        console.log(reg1.test('z')); // true
+        console.log(reg1.test(1)); // false
+        console.log(reg1.test('A')); // false
+        // 字符組合 
+        var reg2 = /^[a-zA-Z0-9_-]$/
+        // 如果中括号中有^ 表示取反，千万别和边界符 ^ 混淆
+        var reg3 = /^[a-zA-Z0-9_-]$/
+        console.log(reg3.test('c')); // !true
+        console.log(reg3.test('z')); // !true
+        console.log(reg3.test(1)); // !false
+        console.log(reg3.test('A')); // !false
+        </script>
+</body>
+</html>

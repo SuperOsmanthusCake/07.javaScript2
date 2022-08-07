@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组中允许我们按照一一对应的关系从数组中提取值然后将值赋值给变量
+        let ary = [1,2,3]
+        let [a,b,c,d,e] = ary
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(d);
+        console.log('-------------------');
+
+        // 按照一定的模式，从数组中或对象中提取值，将提取出来的值赋给另外的值
+        // 对象解构允许我们使用变量的名字匹配对象的属性 匹配成功后将对象属性的值赋给变量
+
+        let person = {name:'xiaotang',age:30,sex:'男'}
+        let {name ,age , sex } = person
+        console.log(name);
+        console.log(age);
+        console.log(sex);
+        console.log('-----------------');
+        let {name:MyName ,age:MyAge , sex:MySex } = person
+        console.log(MyName);
+        console.log(MyAge);
+        console.log(MySex);
+    </script>
+</body>
+</html>

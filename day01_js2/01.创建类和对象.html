@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.创建类 class 创建一个 明星类
+        class Star {
+            // 构造函数
+            constructor(uname,age){
+                this.uname = uname
+                this.age = age
+            }
+            sing(song){
+                // console.log('我唱歌');
+                console.log(this.uname+song);
+            }
+        }
+
+        // 2.利用类创建一个对象 new 
+        var lhf = new Star('龙海锋',19);
+        var tsl = new Star('唐绍龙',21);
+        console.log(lhf);
+        console.log(tsl);
+        // 我们大的类里面搜有的函数不需要写funtion
+        lhf.sing('十二')
+        tsl.sing('晴天')
+    </script>
+</body>
+</html>

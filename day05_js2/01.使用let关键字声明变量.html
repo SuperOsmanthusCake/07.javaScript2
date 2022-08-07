@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.let声明的变量只在所处的块级有效
+        // 2.let不具备变量提升（也就是要先声明，再使用）
+        // 3.暂时性死区（就是局部变量会覆盖相同名字的全局变量）
+        // let 今典面试题
+        var arr = []
+        for(var i = 0 ; i<2; i++){
+            arr[i]= function(){
+                console.log(i);
+            }
+        }
+        arr[0]()
+        arr[1]()
+
+        var arr1 = []
+        for (let i = 0; i < 2; i++) {
+            arr1[i] = function(){
+                console.log(i);
+            }
+        }
+        arr1[0]()
+        arr1[1]()
+        if(1){
+            let a=1
+        }
+        console.log(a);
+    </script>
+</body>
+</html>

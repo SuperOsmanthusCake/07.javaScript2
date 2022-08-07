@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <script>
+        // 扩展运算符可以把数组或对象转为用逗号分隔的参数序列
+        let ary = [1,2,30]
+        console.log(...ary);
+        console.log(1,2,3);
+
+        // 使用扩展运算符 完成数组合并
+        let ary1 = [1,2,30]
+        let ary2 = [1,2,3]
+        // 方法一
+        let ary3 = [...ary1,...ary2]
+        console.log(ary3);
+        // 方法二
+        console.log(ary1.push(...ary2));
+        console.log(ary1);
+
+        // 扩展运算符可以把伪数组或可遍历的对象转换为真正的数组
+        let but = document.querySelectorAll('button')
+        console.log(but);
+        let but1 = [...but]
+        console.log(but1);
+        
+        //
+        let arryayLike = {
+            '0':'a',
+            '1':'b',
+            '2':'c',
+            length:3
+        }
+        let arr2 = ['10','12']
+        arr2  = Array.from(arryayLike);
+        console.log(arr2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 边界符
+        var rg = /123/ // 正则表达式不需要加引号，不管是数字类型还是字符串类型
+        // /123/ 只要求包含132这样的字符串返回的都是true
+        console.log(rg.test('123')); // true
+        console.log(rg.test('1234')); // true
+        console.log(rg.test('123das')); // true
+        console.log('------------------------'); 
+        var reg = /^123/ // 开头必须式123
+        console.log(reg.test('123')); // true
+        console.log(reg.test('1234')); // true
+        console.log(reg.test('123das')); // false
+        console.log('------------------------'); 
+        var reg1 = /^123$/ // 精确匹配 要求必须是 123字符串cai符合规范
+        console.log(reg1.test('123')); // true
+        console.log(reg1.test('1234')); // false
+        console.log(reg1.test('123das')); // false
+
+    </script>
+</body>
+</html>

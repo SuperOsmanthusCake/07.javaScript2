@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .success{
+            color:green;
+        }
+        .defeat{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="uname">
+    <span>请输入用户名</span>
+    <script>
+        // 量词是设定某个模式出现的次数
+        var reg = /^[a-zA-Z0-9_-]{6,16}$/
+        
+        // 获取到提交表单
+        var uname = document.querySelector('.uname')
+        var span = document.querySelector('span')
+        // 定义表单焦点离开事件
+        uname.onblur = function(){
+            if(reg.test(this.value)){
+                span.className = 'success'   
+                span.innerHTML = '用户输入正确'
+            }else {
+                span.className = 'defeat'   
+                span.innerHTML = '用户输入不正确,请重新输入'
+            }
+        }
+
+</script>
+</body>
+</html>

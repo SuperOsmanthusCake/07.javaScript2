@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <script>
+        var that
+        class Star {
+            // constructor 里面的this 指向的是 创建的实例对象
+            constructor(x,y){
+                that = this
+                this.x = x
+                this.y = y
+                // this.sing()
+                this.btn = document.querySelector('button')
+                this.btn.onclick = this.sing
+            }
+            sing(){
+                // 这里的this 指向的是btn 这个按钮，因为这个按钮调用了它
+                console.log(this);
+
+                console.log('hi'+that.x);
+            }
+            // 这里的this 指向的是实例对象 ldh , 因为 ldh 调用了它
+            dance(){
+                console.log(this);
+            }
+        }
+        var ldh = new Star('刘德华')
+        ldh.dance()
+        var zuy = new Star('张学友')
+        // ldh.sing()
+        // 1.类实例化必须 要先定义类再实例化
+        // 2.类里面的共有的属性和方法一定要加 this 使用
+
+    </script>
+</body>
+</html>
